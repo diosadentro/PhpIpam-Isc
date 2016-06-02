@@ -6,9 +6,9 @@ This is my first node.js script so be kind
 To use this script, edit the config.json file and add your PHPIPAM username, password, database host, and database name
 
 Options:
--c <configuration File>
--o <output file>
--t <trigger file>
+* -c configurationFile
+* -o outputFile
+* -t triggerFile
 
 To run the script issue this command
 node main.js -c config.json -o output.hosts -t trigger.hash
@@ -19,7 +19,7 @@ You can have ISC read the host file by including this line in your dhcp configur
 include "/etc/dhcp/hosts";
 
 Future changes:
-1. Add features to select which subnets and IPs to import
-2. Default files instead of having to provide them on the commandline
-3. Better command line read rather than the easy for loop
-4. Support for other DHCP servers
+* Add features to select which subnets and IPs to import.
+* Default files instead of having to provide them on the commandline.
+* Better command line read rather than the easy for loop.
+* Support for other DHCP servers.
