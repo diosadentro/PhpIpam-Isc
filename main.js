@@ -89,11 +89,11 @@ function getIps() {
 	var connection = connectToDb();
 	connection.query('SELECT * from ipaddresses', function(err, rows, fields) {
   		if (!err) {
-    		processIps(rows);
-    	}
+    			processIps(rows);
+    		}
   		else {
-    		throwException("Error", "HIGH", "Failed to read ip addresses");
-    	}
+    			throwException("Error", "HIGH", "Failed to read ip addresses");
+    		}
 	});
 
 	connection.end();
@@ -110,7 +110,7 @@ function connectToDb() {
 
 	connection.connect(function(err){
 		if(err) {
-    		throwException("Error", "HIGH", "Could not connect to database");   
+    			throwException("Error", "HIGH", "Could not connect to database");   
 		}
 	});
 	return connection;
@@ -158,9 +158,9 @@ function writeToOutputFile(output) {
 		}
 		else {
 			fs.writeFile(configuration.output, output, function(err) {
-		    	if(err) {
-		        	throwException("Error", "FATAL", "Could not write out to output file: " + err);
-		    	}
+		    		if(err) {
+		        		throwException("Error", "FATAL", "Could not write out to output file: " + err);
+		    		}
 			});
 			writeTrigger(newHash);
 			restartDhcpServer();
@@ -168,9 +168,9 @@ function writeToOutputFile(output) {
 	}
 	else {
 		fs.writeFile(configuration.output, output, function(err) {
-	    	if(err) {
-	        	throwException("Error", "FATAL", "Could not write out to output file: " + err);
-	    	}
+	    		if(err) {
+	        		throwException("Error", "FATAL", "Could not write out to output file: " + err);
+	    		}
 		});
 	}
 }
@@ -212,7 +212,7 @@ function restartDhcpServer() {
   			sys.print('stdout: ' + stdout);
   			sys.print('stderr: ' + stderr);
   			if (error !== null) {
-    			console.log('exec error: ' + error);
+    				console.log('exec error: ' + error);
   			}
 		});
 }
